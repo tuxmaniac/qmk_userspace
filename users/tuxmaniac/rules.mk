@@ -1,0 +1,16 @@
+MOUSEKEY_ENABLE = yes
+EXTRAKEY_ENABLE = yes
+TAP_DANCE_ENABLE = yes
+CAPS_WORD_ENABLE = yes
+KEY_OVERRIDE_ENABLE = yes
+
+INTROSPECTION_KEYMAP_C = keymap_tuxmaniac.c
+
+ifneq ($(strip $(CLIPBOARD)),)
+  OPT_DEFS += -DCLIPBOARD_$(CLIPBOARD)
+endif
+
+ifeq ($(strip $(KLUDGE_THUMBCOMBOS)),yes)
+  COMBO_ENABLE = yes
+  OPT_DEFS += -DKLUDGE_THUMBCOMBOS
+endif
