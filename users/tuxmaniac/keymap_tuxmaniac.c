@@ -18,7 +18,7 @@ enum {
 U_TD_BOOT,
 #define LAYER_X(LAYER, STRING) U_TD_U_##LAYER,
 LAYER_LIST
-#undef LAYER_X
+#undf LAYER_X
 };
 
 void u_td_fn_boot(tap_dance_state_t *state, void *user_data) {
@@ -50,6 +50,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 LAYER_LIST
 #undef LAYER_X
 };
+
+#ifdef RGB_MATRIX_ENABLE
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+
+    if (host_keyboard_led_state().caps_lock) {
+        rgb_matrix_set_color_all(4, 0, 0);
+    } else {
+        rgb_matrix_set_color_all(0, 4, 0);
+    }
+
+    return false;
+}
+#endif
 
 // thumb combos
 
