@@ -18,7 +18,7 @@ enum {
 U_TD_BOOT,
 #define LAYER_X(LAYER, STRING) U_TD_U_##LAYER,
 LAYER_LIST
-#undf LAYER_X
+#undef LAYER_X
 };
 
 void u_td_fn_boot(tap_dance_state_t *state, void *user_data) {
