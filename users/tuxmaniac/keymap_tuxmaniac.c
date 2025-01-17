@@ -1,8 +1,14 @@
 #include QMK_KEYBOARD_H
 
+enum my_keycodes {
+    U_MISSION_CONTROL = SAFE_RANGE,
+    U_LAUNCHPAD,
+    U_SPOTLIGHT
+};
+
+#include "keycodes.h"
 #include "layers.h"
 #include "layer_list.h"
-#include "keycodes.h"
 
 enum all_layers {
 #define LAYER_X(LAYER, STRING) U_##LAYER,
@@ -86,3 +92,36 @@ combo_t key_combos[COMBO_COUNT] = {
   COMBO(thumbcombos_fun, KC_APP)
 };
 #endif
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  switch (keycode) {
+
+    case U_MISSION_CONTROL:
+      if (record->event.pressed) {
+          host_consumer_send(0x29F);
+      } else {
+          host_consumer_send(0);
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_LAUNCHPAD:
+      if (record->event.pressed) {
+          host_consumer_send(0x2A0);
+      } else {
+          host_consumer_send(0);
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_SPOTLIGHT:
+      if (record->event.pressed) {
+          host_consumer_send(0x221);
+      } else {
+          host_consumer_send(0);
+      }
+      return false; /* Skip all further processing of this key */
+
+    default:
+      return true; /* Process all other keycodes normally */
+
+  }
+}

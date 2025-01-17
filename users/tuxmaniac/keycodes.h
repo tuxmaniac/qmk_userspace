@@ -4,6 +4,9 @@
 #define U_NA KC_NO // present but not available for use
 #define U_NU KC_NO // available but not used
 
+#define U_SCRSHOT   LSFT(LCTL(LGUI(KC_3)))  // full screen copy
+#define U_LASSO     LSFT(LCTL(LGUI(KC_4)))  // lasso screen copy
+
 // universal layout specific
 
 #define U_DPIPE LSFT(RALT(KC_BSLS)) // ¦
@@ -16,6 +19,11 @@
   #define U_CPY KC_COPY
   #define U_CUT KC_CUT
   #define U_UND KC_UNDO
+  #define U_FRDO C(KC_Y)
+  #define U_FPST C(KC_V)
+  #define U_FCPY C(KC_C)
+  #define U_FCUT C(KC_X)
+  #define U_FUND C(KC_Z)
   #define U_PTB LSFT(LCTL(KC_TAB))
   #define U_NTB LCTL(KC_TAB)
   #define U_LOCK LGUI(KC_L)
@@ -25,6 +33,11 @@
   #define U_CPY LCMD(KC_C)
   #define U_CUT LCMD(KC_X)
   #define U_UND LCMD(KC_Z)
+  #define U_FRDO SCMD(KC_Z)
+  #define U_FPST LCMD(KC_V)
+  #define U_FCPY LCMD(KC_C)
+  #define U_FCUT LCMD(KC_X)
+  #define U_FUND LCMD(KC_Z)
   #define U_PTB LSG(KC_LBRC)
   #define U_NTB LSG(KC_RBRC)
   #define U_LOCK LCTL(LGUI(KC_Q))
@@ -34,6 +47,11 @@
   #define U_CPY C(KC_C)
   #define U_CUT C(KC_X)
   #define U_UND C(KC_Z)
+  #define U_FRDO C(KC_Y)
+  #define U_FPST C(KC_V)
+  #define U_FCPY C(KC_C)
+  #define U_FCUT C(KC_X)
+  #define U_FUND C(KC_Z)
   #define U_PTB LSFT(LCTL(KC_TAB))
   #define U_NTB LCTL(KC_TAB)
   #define U_LOCK LGUI(KC_L)
@@ -43,6 +61,11 @@
   #define U_CPY C(KC_INS)
   #define U_CUT S(KC_DEL)
   #define U_UND KC_UNDO
+  #define U_FRDO C(KC_Y)
+  #define U_FPST C(KC_V)
+  #define U_FCPY C(KC_C)
+  #define U_FCUT C(KC_X)
+  #define U_FUND C(KC_Z)
   #define U_PTB LSFT(LCTL(KC_TAB))
   #define U_NTB LCTL(KC_TAB)
   #define U_LOCK LGUI(KC_L)
