@@ -3,7 +3,22 @@
 enum my_keycodes {
     U_MISSION_CONTROL = SAFE_RANGE,
     U_LAUNCHPAD,
-    U_SPOTLIGHT
+    U_SEARCH,
+    U_UND,
+    U_RDO,
+    U_CPY,
+    U_PST,
+    U_CUT,
+    U_LOCK,
+    U_PTB,
+    U_NTB,
+    U_SCRSHOT,
+    U_LASSO,
+    U_FUND,
+    U_FRDO,
+    U_FCPY,
+    U_FPST,
+    U_FCUT
 };
 
 #include "keycodes.h"
@@ -94,6 +109,9 @@ combo_t key_combos[COMBO_COUNT] = {
 #endif
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+
+  os_variant_t os = detected_host_os();
+
   switch (keycode) {
 
     case U_MISSION_CONTROL:
@@ -112,11 +130,264 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false; /* Skip all further processing of this key */
 
-    case U_SPOTLIGHT:
-      if (record->event.pressed) {
-          host_consumer_send(0x221);
-      } else {
-          host_consumer_send(0);
+    case U_SEARCH:
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS: /* Spotlight */
+          if (record->event.pressed) {
+              host_consumer_send(0x221);
+          } else {
+              host_consumer_send(0);
+          }
+        case OS_LINUX: /* Custom keybind SUPER+D */
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(LCMD(KC_D));
+          }
+        case OS_WINDOWS: /* Windows search */
+          if (record->event.pressed) {
+              tap_code16(LCMD(KC_S));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_UND: /* Undo */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LCMD(KC_Z));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(KC_UNDO);
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_RDO: /* Redo */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(SCMD(KC_Z));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(KC_AGIN);
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_PST: /* Paste */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LCMD(KC_V));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(S(KC_INS));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_CPY: /* Copy */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LCMD(KC_C));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(C(KC_INS));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_CUT: /* Cut */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LCMD(KC_X));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(S(KC_DEL));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_LOCK: /* Lock screen */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LCTL(LGUI(KC_Q)));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(LGUI(KC_L));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_PTB: /* Previos tab */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LSG(KC_LBRC));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(LSFT(LCTL(KC_TAB)));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_NTB: /* Next tab */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LSG(KC_RBRC));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(LCTL(KC_TAB));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_SCRSHOT: /* Full screen copy */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LSFT(LCTL(LGUI(KC_3))));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(KC_PSCR);
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_LASSO: /* Lasso screen copy */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LSFT(LCTL(LGUI(KC_4))));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(C(KC_PSCR));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_FUND: /* Undo for factorio */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LCMD(KC_Z));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(C(KC_Z));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_FRDO: /* Redo for factorio */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(SCMD(KC_Z));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(C(KC_Y));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_FPST: /* Paste for factorio */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LCMD(KC_V));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(S(KC_V));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_FCPY: /* Copy for factorio */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LCMD(KC_C));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(C(KC_C));
+          }
+      }
+      return false; /* Skip all further processing of this key */
+
+    case U_FCUT: /* Cut for factorio */
+      switch (os) {
+        case OS_IOS:
+        case OS_MACOS:
+          if (record->event.pressed) {
+              tap_code16(LCMD(KC_X));
+          }
+        case OS_LINUX:
+        case OS_WINDOWS:
+        case OS_UNSURE:
+          if (record->event.pressed) {
+              tap_code16(S(KC_X));
+          }
       }
       return false; /* Skip all further processing of this key */
 

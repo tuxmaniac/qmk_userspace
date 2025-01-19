@@ -13,7 +13,7 @@ U_NA,           KC_ALGR,      TD(U_TD_U_NUM),    TD(U_TD_U_NAV),  U_NA,         
 U_NP,           U_NP,         U_NA,              U_NA,            U_NA,               KC_ENT,          KC_BSPC,          KC_DEL,          U_NP,          U_NP
 
 #define LAYER_SRV \
-TD(U_TD_BOOT),  U_NA,         TD(U_TD_U_FCT),    TD(U_TD_U_BASE), TD(U_TD_U_STF),     U_SCRSHOT,       U_LASSO,          U_NU,            U_NU,          U_SPOTLIGHT,     \
+TD(U_TD_BOOT),  U_NA,         TD(U_TD_U_FCT),    TD(U_TD_U_BASE), TD(U_TD_U_STF),     U_SCRSHOT,       U_LASSO,          U_NU,            U_NU,          U_SEARCH,        \
 KC_LGUI,        KC_LALT,      KC_LCTL,           KC_LSFT,         U_NA,               U_NU,            U_NU,             U_NU,            U_NU,          U_NU,            \
 U_NA,           KC_ALGR,      TD(U_TD_U_SYM),    TD(U_TD_U_SRV),  U_NA,               U_NU,            U_NU,             U_NU,            U_NU,          U_NU,            \
 U_NP,           U_NP,         U_NA,              U_NA,            U_NA,               KC_CAPS,         U_NU,             U_NU,            U_NP,          U_NP
@@ -21,7 +21,7 @@ U_NP,           U_NP,         U_NA,              U_NA,            U_NA,         
 #define LAYER_MEDIA \
 TD(U_TD_BOOT),  U_NA,         TD(U_TD_U_FCT),    TD(U_TD_U_BASE), TD(U_TD_U_STF),     U_NU,            U_NU,             KC_BRID,         KC_BRIU,       U_LOCK,          \
 KC_LGUI,        KC_LALT,      KC_LCTL,           KC_LSFT,         U_NA,               U_NU,            KC_MPRV,          KC_VOLD,         KC_VOLU,       KC_MNXT,         \
-U_NA,           KC_ALGR,      TD(U_TD_U_FUN),    TD(U_TD_U_MEDIA),U_NA,               U_NU,            U_PTB,            U_NU,            U_NU,          U_NTB,           \
+U_NA,           KC_ALGR,      TD(U_TD_U_FUN),    TD(U_TD_U_MEDIA),U_NA,               U_PTB,           U_NU,             U_NU,            U_NTB,         U_NU,            \
 U_NP,           U_NP,         U_NA,              U_NA,            U_NA,               KC_MSTP,         KC_MPLY,          KC_MUTE,         U_NP,          U_NP
 
 #define LAYER_NUM \
