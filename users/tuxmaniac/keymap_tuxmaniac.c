@@ -139,15 +139,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           } else {
               host_consumer_send(0);
           }
+          break;
         case OS_LINUX: /* Custom keybind SUPER+D */
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(LCMD(KC_D));
           }
+          break;
         case OS_WINDOWS: /* Windows search */
           if (record->event.pressed) {
               tap_code16(LCMD(KC_S));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -158,12 +161,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LCMD(KC_Z));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(KC_UNDO);
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -174,12 +179,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(SCMD(KC_Z));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(KC_AGIN);
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -190,12 +197,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LCMD(KC_V));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(S(KC_INS));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -206,12 +215,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LCMD(KC_C));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(C(KC_INS));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -222,12 +233,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LCMD(KC_X));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(S(KC_DEL));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -238,12 +251,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LCTL(LGUI(KC_Q)));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(LGUI(KC_L));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -254,12 +269,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LSG(KC_LBRC));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(LSFT(LCTL(KC_TAB)));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -270,12 +287,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LSG(KC_RBRC));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(LCTL(KC_TAB));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -286,12 +305,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LSFT(LCTL(LGUI(KC_3))));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(KC_PSCR);
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -302,12 +323,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LSFT(LCTL(LGUI(KC_4))));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(C(KC_PSCR));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -318,12 +341,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LCMD(KC_Z));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(C(KC_Z));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -334,12 +359,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(SCMD(KC_Z));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(C(KC_Y));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -350,12 +377,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LCMD(KC_V));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(S(KC_V));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -366,12 +395,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LCMD(KC_C));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(C(KC_C));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
@@ -382,12 +413,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           if (record->event.pressed) {
               tap_code16(LCMD(KC_X));
           }
+          break;
         case OS_LINUX:
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
               tap_code16(S(KC_X));
           }
+          break;
       }
       return false; /* Skip all further processing of this key */
 
