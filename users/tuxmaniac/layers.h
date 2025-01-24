@@ -2,8 +2,8 @@
 
 #define LAYER_BASE \
 KC_Q,           KC_W,         KC_E,              KC_R,            KC_T,               KC_Y,            KC_U,             KC_I,            KC_O,          KC_P,            \
-LGUI_T(KC_A),   LALT_T(KC_S), LCTL_T(KC_D),      LSFT_T(KC_F),    KC_G,               KC_H,            LSFT_T(KC_J),     LCTL_T(KC_K),    LALT_T(KC_L),  LGUI_T(KC_SCLN), \
-KC_Z,           ALGR_T(KC_X), KC_C,              KC_V,            KC_B,               KC_N,            KC_M,             KC_COMM,         ALGR_T(KC_DOT),KC_SLSH,         \
+LGUI_T(KC_A),   LALT_T(KC_S), LCTL_T(KC_D),      LSFT_T(KC_F),    KC_G,               KC_H,            LSFT_T(KC_J),     LCTL_T(KC_K),    LALT_T(KC_L),  LGUI_T(U_TILDE), \
+KC_Z,           ALGR_T(KC_X), KC_C,              KC_V,            KC_B,               KC_N,            KC_M,             U_AMPS,          ALGR_T(U_LBKT),U_RBKT,          \
 U_NP,           U_NP,         LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_SPC),LT(U_SRV,KC_TAB),   LT(U_SYM,KC_ENT),LT(U_NUM,KC_BSPC),LT(U_FUN,KC_DEL),U_NP,          U_NP
 
 #define LAYER_NAV \
@@ -25,16 +25,16 @@ U_NA,           KC_ALGR,      TD(U_TD_U_FUN),    TD(U_TD_U_MEDIA),U_NA,         
 U_NP,           U_NP,         U_NA,              U_NA,            U_NA,               KC_MSTP,         KC_MPLY,          KC_MUTE,         U_NP,          U_NP
 
 #define LAYER_NUM \
-KC_9,           LSFT(KC_7),   LSFT(KC_8),        LSFT(KC_9),      KC_0,               U_NA,            TD(U_TD_U_BASE),  U_NA,            U_NA,          TD(U_TD_BOOT),   \
-KC_8,           LSFT(KC_4),   LSFT(KC_5),        LSFT(KC_6),      KC_EQL,             KC_BSPC,         KC_LSFT,          KC_LCTL,         KC_LALT,       KC_LGUI,         \
-KC_BSLS,        LSFT(KC_1),   LSFT(KC_2),        LSFT(KC_3),      LSFT(KC_EQL),       U_NA,            TD(U_TD_U_NUM),   TD(U_TD_U_NAV),  KC_ALGR,       U_NA,            \
-U_NP,           U_NP,         KC_RBRC,           LSFT(KC_0),      KC_MINS,            KC_ENT,          U_NA,             U_NA,            U_NP,          U_NP
+U_LPAR,         U_7,          U_8,               U_9,             U_RPAR,             U_NA,            TD(U_TD_U_BASE),  U_NA,            U_NA,          TD(U_TD_BOOT),   \
+U_STAR,         U_4,          U_5,               U_6,             KC_EQL,             KC_BSPC,         KC_LSFT,          KC_LCTL,         KC_LALT,       KC_LGUI,         \
+U_SLASH,        U_1,          U_2,               U_3,             U_PLUS,             U_NA,            TD(U_TD_U_NUM),   TD(U_TD_U_NAV),  KC_ALGR,       U_NA,            \
+U_NP,           U_NP,         U_DOT,             U_0,             KC_MINS,            KC_ENT,          U_NA,             U_NA,            U_NP,          U_NP
 
 #define LAYER_SYM \
-RALT(KC_GRV),   KC_GRV,       LSFT(KC_GRV),      LSFT(KC_RBRC),   LSFT(KC_LBRC),      U_NA,            TD(U_TD_U_BASE),  U_NA,            U_NA,          TD(U_TD_BOOT),   \
-LSFT(KC_BSLS),  KC_6,         KC_5,              KC_4,            U_DPIPE,            U_NA,            KC_LSFT,          KC_LCTL,         KC_LALT,       KC_LGUI,         \
-RALT(KC_BSLS),  KC_1,         KC_2,              KC_3,            KC_7,               U_NA,            TD(U_TD_U_SYM),   TD(U_TD_U_SRV),  KC_ALGR,       U_NA,            \
-U_NP,           U_NP,         KC_RBRC,           KC_LBRC,         KC_UNDS,            U_NA,            U_NA,             U_NA,            U_NP,          U_NP
+U_GRAVE,        U_SQT,        U_DQT,             U_COLON,         U_SEMI,             U_NA,            TD(U_TD_U_BASE),  U_NA,            U_NA,          TD(U_TD_BOOT),   \
+U_PIPE,         U_CARET,      U_PERCENT,         U_DOLLAR,        U_DPIPE,            U_NA,            KC_LSFT,          KC_LCTL,         KC_LALT,       KC_LGUI,         \
+U_BSLH,         U_EXCL,       U_AT,              U_HASH,          U_QUESTION,         U_NA,            TD(U_TD_U_SYM),   TD(U_TD_U_SRV),  KC_ALGR,       U_NA,            \
+U_NP,           U_NP,         U_DOT,             U_COMMA,         KC_UNDS,            U_NA,            U_NA,             U_NA,            U_NP,          U_NP
 
 #define LAYER_FUN \
 KC_F12,         KC_F7,        KC_F8,             KC_F9,           KC_PSCR,            U_NA,            TD(U_TD_U_BASE),  U_NA,            U_NA,          TD(U_TD_BOOT),   \
