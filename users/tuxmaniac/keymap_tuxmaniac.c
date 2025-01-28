@@ -382,7 +382,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
-              tap_code16(S(KC_V));
+              tap_code16(C(KC_V));
           }
           break;
       }
@@ -418,7 +418,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         case OS_WINDOWS:
         case OS_UNSURE:
           if (record->event.pressed) {
-              tap_code16(S(KC_X));
+              tap_code16(C(KC_X));
           }
           break;
       }
