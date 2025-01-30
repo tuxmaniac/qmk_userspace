@@ -18,9 +18,28 @@ enum my_keycodes {
     U_FRDO,
     U_FCPY,
     U_FPST,
-    U_FCUT
+    U_FCUT,
+    SMTD_KEYCODES_BEGIN,
+    CKC_A,
+    CKC_S,
+    CKC_D,
+    CKC_F,
+    CKC_J,
+    CKC_K,
+    CKC_L,
+    CKC_TILDE,
+    CKC_X,
+    CKC_LBKT,
+    CKC_ESC,
+    CKC_SPC,
+    CKC_TAB,
+    CKC_ENT,
+    CKC_BSPC,
+    CKC_DEL,
+    SMTD_KEYCODES_END,
 };
 
+#include "sm_td.h"
 #include "keycodes.h"
 #include "layers.h"
 #include "layer_list.h"
@@ -108,7 +127,32 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 #endif
 
+void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
+  switch (keycode) {
+    SMTD_MT(CKC_A,     KC_A,    KC_LGUI, 1)
+    SMTD_MT(CKC_S,     KC_S,    KC_LALT, 1)
+    SMTD_MT(CKC_D,     KC_D,    KC_LCTL, 1)
+    SMTD_MT(CKC_F,     KC_F,    KC_LSFT, 1)
+    SMTD_MT(CKC_J,     KC_J,    KC_LSFT, 1)
+    SMTD_MT(CKC_K,     KC_K,    KC_LCTL, 1)
+    SMTD_MT(CKC_L,     KC_L,    KC_LALT, 1)
+    SMTD_MT(CKC_TILDE, U_TILDE, KC_LGUI, 1)
+    SMTD_MT(CKC_X,     KC_X,    KC_ALGR, 1)
+    SMTD_MT(CKC_LBKT,  U_LBKT,  KC_ALGR, 1)
+    SMTD_LT(CKC_ESC,   KC_ESC,  U_MEDIA, 1)
+    SMTD_LT(CKC_SPC,   KC_SPC,  U_NAV,   1)
+    SMTD_LT(CKC_TAB,   KC_TAB,  U_SRV,   1)
+    SMTD_LT(CKC_ENT,   KC_ENT,  U_SYM,   1)
+    SMTD_LT(CKC_BSPC,  KC_BSPC, U_NUM,   1)
+    SMTD_LT(CKC_DEL,   KC_DEL,  U_FUN,   1)
+  }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+
+  if (!process_smtd(keycode, record)) {
+    return false;
+  };
 
   os_variant_t os = detected_host_os();
 

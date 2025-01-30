@@ -2,9 +2,9 @@
 
 #define LAYER_BASE \
 KC_Q,           KC_W,         KC_E,              KC_R,            KC_T,               KC_Y,            KC_U,             KC_I,            KC_O,          KC_P,            \
-LGUI_T(KC_A),   LALT_T(KC_S), LCTL_T(KC_D),      LSFT_T(KC_F),    KC_G,               KC_H,            LSFT_T(KC_J),     LCTL_T(KC_K),    LALT_T(KC_L),  LGUI_T(U_TILDE), \
-KC_Z,           ALGR_T(KC_X), KC_C,              KC_V,            KC_B,               KC_N,            KC_M,             U_AMPS,          ALGR_T(U_LBKT),U_RBKT,          \
-U_NP,           U_NP,         LT(U_MEDIA,KC_ESC),LT(U_NAV,KC_SPC),LT(U_SRV,KC_TAB),   LT(U_SYM,KC_ENT),LT(U_NUM,KC_BSPC),LT(U_FUN,KC_DEL),U_NP,          U_NP
+CKC_A,          CKC_S,        CKC_D,             CKC_F,           KC_G,               KC_H,            CKC_J,            CKC_K,           CKC_L,         CKC_TILDE,       \
+KC_Z,           CKC_X,        KC_C,              KC_V,            KC_B,               KC_N,            KC_M,             U_AMPS,          CKC_LBKT,      U_RBKT,          \
+U_NP,           U_NP,         CKC_ESC,           CKC_SPC,         CKC_TAB,            CKC_ENT,         CKC_BSPC,         CKC_DEL,         U_NP,          U_NP
 
 #define LAYER_NAV \
 TD(U_TD_BOOT),  U_NA,         TD(U_TD_U_FCT),    TD(U_TD_U_BASE), TD(U_TD_U_STF),     U_RDO,           U_PST,            U_CPY,           U_CUT,         U_UND,           \
