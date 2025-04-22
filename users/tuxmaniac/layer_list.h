@@ -11,4 +11,6 @@ LAYER_X(FUN,    "Fun") \
 LAYER_X(FCT,    "Fct") \
 LAYER_X(FCT2,   "Fct2") \
 LAYER_X(STF,    "Stf") \
-LAYER_X(STF2,   "Stf2")
+LAYER_X(STF2,   "Stf2") \
+LAYER_X(ELT,    "Elt") \
+LAYER_X(ELT2,   "Elt2")
