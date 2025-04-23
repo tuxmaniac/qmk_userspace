@@ -70,10 +70,10 @@ U_NP,           U_NP,           U_NA,              KC_H,              KC_P,     
 KC_TAB,         KC_Q,           KC_W,              KC_E,              KC_R,               KC_F1,           KC_F2,            KC_F3,           KC_F4,         KC_F5,           \
 KC_LSFT,        KC_A,           KC_S,              KC_D,              KC_F,               KC_F6,           KC_F7,            KC_F8,           KC_F9,         KC_F10,          \
 KC_LALT,        KC_Z,           KC_X,              KC_C,              KC_V,               KC_F11,          KC_F12,           KC_EQL,          KC_P,          TD(U_TD_U_BASE), \
-U_NP,           U_NP,           LT(U_ELT2,KC_ESC), KC_LCTL,           KC_SPC,             KC_ENT,          KC_BSPC,          KC_DEL,          U_NP,          U_NP
+U_NP,           U_NP,           KC_LCTL,           LT(U_ELT2,KC_ESC), KC_SPC,             KC_ENT,          KC_BSPC,          KC_DEL,          U_NP,          U_NP
 
 #define LAYER_ELT2 \
 KC_PGUP,        KC_R,           KC_UP,             KC_Y,              KC_T,               U_NA,            U_NA,             U_NA,            U_NA,          U_NA,            \
 KC_PGDN,        KC_LEFT,        KC_DOWN,           KC_RGHT,           KC_H,               U_NA,            U_NA,             U_NA,            U_NA,          U_NA,            \
 KC_HOME,        KC_J,           KC_N,              KC_U,              KC_L,               U_NA,            U_NA,             U_NA,            U_NA,          U_NA,            \
-U_NP,           U_NP,           U_NA,              KC_BSPC,           KC_ENT,             U_NA,            U_NA,             U_NA,            U_NP,          U_NP
+U_NP,           U_NP,           KC_BSPC,           U_NA,              KC_ENT,             U_NA,            U_NA,             U_NA,            U_NP,          U_NP
